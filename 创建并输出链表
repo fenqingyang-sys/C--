@@ -1,5 +1,4 @@
-# C-
-C语言函数
+//带头节点的单链表 
 # include <stdio.h>
 # include <stdlib.h>
 typedef struct node
@@ -14,11 +13,12 @@ void main ()
 	NODE *p,*q=NULL,*h=NULL;
 	for(i=0;i<5;i++)
 	{
-		p=(NODE*)malloc(sizeof(struct node));
-		p->data=a[i];
-		if(h==NULL)
+		p=(NODE*)malloc(sizeof(struct node));//生成一个节点 
+		p->data=a[i];//存入数据 
+		p->next=NULL;
+		if(h==NULL)//第一次判断为真，直接做h=p和q=p; 
 		{
-			h=p;
+			h=p;//h指向p添加头节点 
 		}
 		else
 		{
@@ -26,15 +26,11 @@ void main ()
 		}
 		q=p;
 	}
-	if(q!=NULL)
-	{
-		q->next=NULL;
-	}
-	while(p!=NULL)
+	
+	while(p!=NULL)//打印链表数据 
 	{
 		printf("%d  ",h->data);
 		h=h->next;
 	}
 		
 }
- 
