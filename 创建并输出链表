@@ -6,14 +6,14 @@ typedef struct node
 	int data;
 	struct node *next;
 }NODE;
-void main ()
+int main (void)
 {
 	int a[5]={1,2,3,4,5};
 	int i;
 	NODE *p,*q=NULL,*h=NULL;
 	for(i=0;i<5;i++)
 	{
-		p=(NODE*)malloc(sizeof(struct node));//生成一个节点 
+		p=(NODE*)malloc(sizeof(struct node));//生成一个节点将返回的指针进行强制类型转换 
 		p->data=a[i];//存入数据 
 		p->next=NULL;
 		if(h==NULL)//第一次判断为真，直接做h=p和q=p; 
@@ -29,8 +29,8 @@ void main ()
 	
 	while(p!=NULL)//打印链表数据 
 	{
-		printf("%d  ",h->data);
+		printf("%d -> ",h->data);
 		h=h->next;
 	}
-		
+	return 0;	
 }
